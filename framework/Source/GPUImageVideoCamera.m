@@ -529,22 +529,22 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
 	{
 		for (AVCaptureConnection *connection in videoOutput.connections)
 		{
-			if ([connection respondsToSelector:@selector(setVideoMinFrameDuration:)])
-				connection.videoMinFrameDuration = CMTimeMake(1, _frameRate);
-			
-			if ([connection respondsToSelector:@selector(setVideoMaxFrameDuration:)])
-				connection.videoMaxFrameDuration = CMTimeMake(1, _frameRate);
+//			if ([connection respondsToSelector:@selector(setVideoMinFrameDuration:)])
+//				connection.videoMinFrameDuration = CMTimeMake(1, _frameRate);
+//			
+//			if ([connection respondsToSelector:@selector(setVideoMaxFrameDuration:)])
+//				connection.videoMaxFrameDuration = CMTimeMake(1, _frameRate);
 		}
 	}
 	else
 	{
 		for (AVCaptureConnection *connection in videoOutput.connections)
 		{
-			if ([connection respondsToSelector:@selector(setVideoMinFrameDuration:)])
-				connection.videoMinFrameDuration = kCMTimeInvalid; // This sets videoMinFrameDuration back to default
-			
-			if ([connection respondsToSelector:@selector(setVideoMaxFrameDuration:)])
-				connection.videoMaxFrameDuration = kCMTimeInvalid; // This sets videoMaxFrameDuration back to default
+//			if ([connection respondsToSelector:@selector(setVideoMinFrameDuration:)])
+//				connection.videoMinFrameDuration = kCMTimeInvalid; // This sets videoMinFrameDuration back to default
+//			
+//			if ([connection respondsToSelector:@selector(setVideoMaxFrameDuration:)])
+//				connection.videoMaxFrameDuration = kCMTimeInvalid; // This sets videoMaxFrameDuration back to default
 		}
 	}
 }

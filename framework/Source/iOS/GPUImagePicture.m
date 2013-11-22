@@ -69,7 +69,7 @@
     CGFloat heightOfImage = CGImageGetHeight(newImageSource);
 
     // If passed an empty image reference, CGContextDrawImage will fail in future versions of the SDK.
-    NSAssert( widthOfImage > 0 && heightOfImage > 0, @"Passed image must not be empty - it should be at least 1px tall and wide");
+    NSAssert(widthOfImage > 0 && heightOfImage > 0, @"Passed image must not be empty - it should be at least 1px tall and wide");
     
     pixelSizeOfImage = CGSizeMake(widthOfImage, heightOfImage);
     CGSize pixelSizeToUseForTexture = pixelSizeOfImage;
@@ -78,6 +78,7 @@
     
     // For now, deal with images larger than the maximum texture size by resizing to be within that limit
     CGSize scaledImageSizeToFitOnGPU = [GPUImageContext sizeThatFitsWithinATextureForSize:pixelSizeOfImage];
+    
     if (!CGSizeEqualToSize(scaledImageSizeToFitOnGPU, pixelSizeOfImage))
     {
         pixelSizeOfImage = scaledImageSizeToFitOnGPU;
